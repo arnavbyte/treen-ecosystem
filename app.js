@@ -1,6 +1,6 @@
 /**
  * TREEN ECOSYSTEM — CLIENT SCRIPT ENGINE
- * Multi-page lightweight interaction: mobile navigation & task mockup preview.
+ * Multi-page lightweight interaction: mobile navigation & mobile APK download stream handler.
  */
 
 // ============================================================================
@@ -15,7 +15,7 @@ function initMobileNav() {
     drawer.classList.toggle("open");
   });
 
-  document.querySelectorAll(".mobile-nav-link").forEach(link => {
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       drawer.classList.remove("open");
     });
@@ -23,78 +23,19 @@ function initMobileNav() {
 }
 
 // ============================================================================
-// 2. TREEN TASK MOCKUP INTERACTION (task.html)
+// 2. APK DOWNLOAD FALLBACK FOR MOBILE BROWSERS
+// Direct window assignment bypasses cross-origin redirect stalling on mobile.
 // ============================================================================
-function initTaskMockup() {
-  const list = document.getElementById("mockupTaskList");
-  const progressText = document.getElementById("capsuleProgressText");
-  const progressPill = document.getElementById("capsuleProgressPill");
-  const statusNote = document.getElementById("mockupStatusNote");
-  const streakText = document.getElementById("mockupStreakText");
-
-  if (!list) return;
-
-  const rows = list.querySelectorAll(".task-row");
-
-  function updateMockupState() {
-    const checkedRows = list.querySelectorAll(".task-row.checked");
-    const count = checkedRows.length;
-    const threshold = 3;
-
-    if (progressText) {
-      if (count >= threshold) {
-        progressText.textContent = `${count}/${threshold} Certified (Threshold Met)`;
-      } else {
-        progressText.textContent = `${count}/${threshold} Certified`;
+function initApkDownloads() {
+  document.querySelectorAll('a[href$=".apk"]').forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const url = btn.getAttribute("href");
+      if (url && url !== "#") {
+        // Direct window assignment triggers the OS download manager on mobile Android
+        window.location.assign(url);
       }
-    }
-
-    if (progressPill) {
-      if (count >= threshold) {
-        progressPill.classList.add("armed");
-      } else {
-        progressPill.classList.remove("armed");
-      }
-    }
-
-    if (statusNote) {
-      if (count >= threshold) {
-        statusNote.innerHTML = '<span style="color: var(--accent-green); font-weight: 600;">✓ Daily Momentum: Qualified for today\'s milestone badge.</span>';
-      } else {
-        statusNote.textContent = 'Daily Momentum: Complete 3 or more missions to qualify.';
-      }
-    }
-
-    if (streakText) {
-      if (count >= threshold) {
-        streakText.textContent = "15 DAYS (INCREMENTED)";
-      } else {
-        streakText.textContent = "14 DAYS";
-      }
-    }
-  }
-
-  rows.forEach(row => {
-    row.addEventListener("click", () => {
-      row.classList.toggle("checked");
-      const timestampEl = row.querySelector(".task-timestamp");
-      const isChecked = row.classList.contains("checked");
-
-      if (timestampEl) {
-        if (isChecked) {
-          const now = new Date();
-          const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-          timestampEl.textContent = `Completed at ${timeStr} · Checkpoint Certified`;
-        } else {
-          timestampEl.textContent = 'Pending · Tap to certify completion';
-        }
-      }
-
-      updateMockupState();
     });
   });
-
-  updateMockupState();
 }
 
 // ============================================================================
@@ -102,5 +43,5 @@ function initTaskMockup() {
 // ============================================================================
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
-  initTaskMockup();
+  initApkDownloads();
 });
