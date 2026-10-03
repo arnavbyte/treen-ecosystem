@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treen Task — Quiet Daily Execution</title>
+  <meta name="description" content="A quiet daily planner built around small, consistent execution, completion timestamps, and disciplined milestone sets.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="Treen Home">
+        <img src="assets/brand/treen-wordmark.png" alt="Treen" class="brand-wordmark-img">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-item-link">Ecosystem</a></li>
+          <li><a href="task.html" class="nav-item-link active">Treen Task</a></li>
+          <li><a href="vault.html" class="nav-item-link">The Vault</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-action">
+        <a href="#download" class="btn btn-primary btn-sm">Download APK</a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <a href="index.html" class="mobile-nav-link">Ecosystem</a>
+    <a href="task.html" class="mobile-nav-link">Treen Task</a>
+    <a href="vault.html" class="mobile-nav-link">The Vault</a>
+  </div>
+
+  <main>
+    <!-- Product Overview Hero -->
+    <section class="hero-wrap">
+      <div class="container">
+        <div class="hero-content">
+          <span class="section-label">MODULE 01 · PRODUCT SPECIFICATION</span>
+
+          <h1 class="hero-title">
+            A quiet daily planner built around <em>small, consistent execution</em>.
+          </h1>
+
+          <p class="hero-subhead">
+            Treen Task rejects sprawling backlogs, social comparison feeds, and speculative task bloat. It provides a focused list with sub-checkpoints, exact completion timestamps, and disciplined milestone progression.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#preview" class="btn btn-primary">
+              <span>View Product Interface ↓</span>
+            </a>
+            <a href="vault.html" class="btn btn-outline">
+              <span>Technical Architecture</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Preview: Interactive Home Screen Vector / Mockup -->
+    <section class="section" id="preview">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">APPLICATION INTERFACE</span>
+          <h2 class="section-title">The Daily Register</h2>
+          <p>The core daily interface, designed with the quiet legibility of archival Japanese stationery.</p>
+        </div>
+
+        <div class="mockup-frame">
+          <!-- Subtle Low-Opacity Background Watermark (0.04 opacity) -->
+          <img src="assets/brand/treen-wordmark.png" alt="" class="mockup-watermark" aria-hidden="true">
+
+          <div class="mockup-inner">
+            <div class="mockup-header">
+              <div>
+                <span class="section-label" style="margin-bottom: 4px;">DAILY REGISTER</span>
+                <div class="mockup-date">Saturday, October 3</div>
+              </div>
+              <div style="text-align: right;">
+                <span class="pill-badge">STATIONERY V1.4</span>
+              </div>
+            </div>
+
+            <!-- Factual Status Bar -->
+            <div class="mockup-status-bar">
+              <div>
+                <span>STREAK: </span>
+                <strong id="mockupStreakText" style="color: var(--ink-primary);">14 DAYS</strong>
+              </div>
+              <div>
+                <span class="capsule-pill" id="capsuleProgressPill">
+                  <span id="capsuleProgressText">2/3 Tasks Certified</span>
+                </span>
+              </div>
+              <div style="color: var(--ink-muted);">
+                <span>COLLECTION: BATMAN &amp; DC</span>
+              </div>
+            </div>
+
+            <!-- Interactive Task List with Completion Timestamps -->
+            <div class="task-list" id="mockupTaskList">
+              <div class="task-row checked" data-id="1">
+                <div class="task-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="task-info">
+                  <span class="task-title">Morning analog notebook review (20m)</span>
+                  <span class="task-timestamp">Completed at 07:15 AM · Checkpoint Certified</span>
+                </div>
+              </div>
+
+              <div class="task-row checked" data-id="2">
+                <div class="task-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="task-info">
+                  <span class="task-title">SQLite WAL migration schema audit</span>
+                  <span class="task-timestamp">Completed at 09:30 AM · Atomic Write Logged</span>
+                </div>
+              </div>
+
+              <div class="task-row" data-id="3">
+                <div class="task-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="task-info">
+                  <span class="task-title">Read chapter 4 of structural typography</span>
+                  <span class="task-timestamp">Pending · Tap to certify completion</span>
+                </div>
+              </div>
+
+              <div class="task-row" data-id="4">
+                <div class="task-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="task-info">
+                  <span class="task-title">Physical conditioning: 5km run at dusk</span>
+                  <span class="task-timestamp">Pending · Tap to certify completion</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px dashed var(--border-color); display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: var(--ink-muted); font-family: var(--font-mono);">
+              <span>LOCAL WAL COMMITS ONLY</span>
+              <span id="mockupStatusNote">Completing 3+ tasks maintains momentum.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Highlights (Clean, Factual, Minimal Text) -->
+    <section class="section" style="background-color: var(--bg-tint-soft);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">FUNCTIONAL SPECIFICATION</span>
+          <h2 class="section-title">Product Highlights</h2>
+          <p>Every feature is calibrated to assist focus rather than create digital friction.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Highlight 1 -->
+          <div class="card">
+            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 01</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Daily Planning</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6;">
+              Simple, focused list with sub-checkpoints and completion timestamps. Prevents backlogs from accumulating into endless, demoralizing queues.
+            </p>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="card">
+            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 02</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Streak &amp; Habit Logic</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6;">
+              Completing 3 or more daily tasks maintains streak momentum and logs a milestone badge at midnight. Days with fewer than 3 completed tasks reset the counter.
+            </p>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="card">
+            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 03</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Themed Collections</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6;">
+              Six curated milestone sets spanning distinct narrative traditions. Users remain locked to their active collection until completing all progression tiers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Themed Collections Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">CURATED MILESTONE SETS</span>
+          <h2 class="section-title">The 6 Themed Collections</h2>
+          <p>Users select one collection at onboarding. In accordance with Category Isolation rules, theme switching remains locked until completing the full 6-tier sequence.</p>
+        </div>
+
+        <div class="collection-grid">
+          <!-- 1. Batman & DC -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--accent-green); font-family: var(--font-mono); font-weight: 600;">ACTIVE</span>
+              </div>
+              <h4 class="collection-name">Batman &amp; DC</h4>
+              <p class="collection-desc">
+                The solitary discipline of Gotham. Gritty, meticulous logging inspired by detective notes and unyielding nocturnal vigilance.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+
+          <!-- 2. Marvel & Spider-Man -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">LOCKED</span>
+              </div>
+              <h4 class="collection-name">Marvel &amp; Spider-Man</h4>
+              <p class="collection-desc">
+                Queens grit, lab notebook precision, and the burden of daily responsibility. Grounded execution under everyday pressure.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+
+          <!-- 3. Japanese Shonen Manga -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">LOCKED</span>
+              </div>
+              <h4 class="collection-name">Japanese Shonen Manga</h4>
+              <p class="collection-desc">
+                Vintage pulp ink aesthetics and unrelenting physical training arcs. Grounded in the premise that daily reps compound into mastery.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+
+          <!-- 4. Korean Manhwa -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">LOCKED</span>
+              </div>
+              <h4 class="collection-name">Korean Manhwa</h4>
+              <p class="collection-desc">
+                Sovereign quest windows and clean stat progression. Solitary daily requirements that separate stagnation from personal ascension.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+
+          <!-- 5. Anime Classic & Cyberpunk -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">LOCKED</span>
+              </div>
+              <h4 class="collection-name">Anime Classic &amp; Cyberpunk</h4>
+              <p class="collection-desc">
+                Neo-Tokyo wireframes, synthetic telemetry, and human discipline resisting systemic exhaustion in an over-engineered landscape.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+
+          <!-- 6. Graphic Novels & Anti-Heroes -->
+          <div class="collection-card">
+            <div>
+              <div class="collection-header">
+                <span class="pill-badge">6 TIERS</span>
+                <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">LOCKED</span>
+              </div>
+              <h4 class="collection-name">Graphic Novels &amp; Anti-Heroes</h4>
+              <p class="collection-desc">
+                Stark realism, cynical journals, and the quiet dignity of executing necessary tasks without expecting external validation.
+              </p>
+            </div>
+            <div style="margin-top: 18px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+              TIER RANGE: ROOKIE → LEGEND
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download Section Anchor -->
+    <section class="section" id="download" style="background-color: var(--bg-tint-soft);">
+      <div class="container">
+        <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+          <div>
+            <span class="section-label">PACKAGE DISTRIBUTION</span>
+            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Download Treen Task (APK v1.4.2)</h3>
+            <p style="font-size: 0.95rem; color: var(--ink-body); max-width: 540px;">
+              Standalone, zero-permissions binary. Requires Android 8.0+. Direct sideload package with zero third-party telemetry.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <a href="#" class="btn btn-primary" onclick="alert('Binary download initiated: treen-task-v1.4.2-arm64.apk (8.4 MB)'); return false;">
+              <span>Download APK (8.4 MB)</span>
+            </a>
+            <a href="vault.html" class="btn btn-outline">
+              <span>View SHA-256 Checksums</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full-Bleed Green Accent Footer Band (#54B16C) -->
+  <footer class="footer-green">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Treen Ecosystem</div>
+          <p class="footer-desc">
+            A quiet suite of sovereign local utilities. Designed on Japanese stationery principles for individuals who value privacy, archival permanence, and disciplined execution.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-label">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Ecosystem Manifesto</a></li>
+            <li><a href="task.html">Treen Task (Module 01)</a></li>
+            <li><a href="vault.html">The Vault (Architecture)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-label">Distribution</div>
+          <ul class="footer-links">
+            <li><a href="#download">Download APK (v1.4.2)</a></li>
+            <li><a href="vault.html#schema">SQLite Database DDL</a></li>
+            <li><a href="vault.html#crypto">HMAC Verification Spec</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 TREEN ECOSYSTEM FOUNDRY. OPEN-SOURCE UTILITY STANDARDS.
+        </div>
+        <div>
+          IMMUTABLE LOCAL ARCHIVAL SPECIFICATION
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
