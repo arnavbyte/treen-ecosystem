@@ -59,9 +59,9 @@ function initTaskMockup() {
 
     if (statusNote) {
       if (count >= threshold) {
-        statusNote.innerHTML = '<span style="color: var(--accent-green); font-weight: 600;">✓ Threshold Met: Daily milestone badge logged at 11:59 PM.</span>';
+        statusNote.innerHTML = '<span style="color: var(--accent-green); font-weight: 600;">✓ Daily Momentum: Qualified for today\'s milestone badge.</span>';
       } else {
-        statusNote.textContent = 'Completing 3+ tasks maintains momentum.';
+        statusNote.textContent = 'Daily Momentum: Complete 3 or more missions to qualify.';
       }
     }
 

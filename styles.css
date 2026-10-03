@@ -3,7 +3,7 @@
    Visual Style: Broadsheet Stationery (Quiet, Confident, Editorial, Functional)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,600;1,8..60,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Surfaces & Canvas */
@@ -15,7 +15,7 @@
 
   /* Ink / Text Tokens */
   --ink-primary: #18181B;     /* Headings, primary actions */
-  --ink-body: #52525C;        /* Body copy */
+  --ink-body: #52525C;        /* Body copy in muted charcoal */
   --ink-muted: #71717B;       /* Muted labels & timestamps */
   --ink-faint: #A1A1AA;
 
@@ -32,14 +32,14 @@
   --radius-pill: 9999px;
 
   /* Typography Stacks */
-  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Source Serif 4', 'Fraunces', 'Tiempos Headline', 'Gelica', 'Source Serif Pro', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 
   /* Typography Hierarchy */
-  --tracking-label: 0.2em;    /* Small section labels uppercase with wide tracking (0.2em) */
-  --lh-heading: 1.05;         /* Tight line-height (1.0 - 1.1) */
-  --lh-body: 1.65;            /* Neutral sans-serif with clean line-height */
+  --tracking-label: 0.22em;   /* Wide uppercase tracking (0.2em - 0.25em) */
+  --lh-heading: 1.08;         /* Tight editorial serif line-height (1.05 - 1.1) */
+  --lh-body: 1.65;            /* Relaxed line-height (~1.65) in muted charcoal */
 
   /* Layout */
   --container-max: 1140px;
@@ -434,6 +434,29 @@ code, pre, .mono {
   border: 1px dashed var(--border-color);
 }
 
+/* Minimal locked cards for unannounced mystery utilities */
+.suite-card.minimal-locked {
+  background-color: #FAF9F6;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 270px;
+  text-align: center;
+}
+
+.suite-card.minimal-locked.dashed {
+  border: 1px dashed var(--border-color);
+}
+
+.suite-lock-icon {
+  font-size: 28px;
+  line-height: 1;
+  color: var(--ink-muted);
+}
+
 .suite-card-top {
   display: flex;
   flex-direction: column;
@@ -472,9 +495,9 @@ code, pre, .mono {
   font-family: var(--font-sans);
   font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: var(--radius-btn);
 }
 
