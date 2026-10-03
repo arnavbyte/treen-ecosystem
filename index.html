@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treen Task — Quiet Discipline, Crafted in Paper and Code</title>
+  <meta name="description" content="An offline-first, tamper-proof, Japanese stationery-inspired task & habit engine with zero storage permissions, AES-256 .popvault backups, and 6 comic milestone universes.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Masthead Top Folio Bar -->
+  <div class="masthead-folio">
+    <div class="container masthead-folio-inner">
+      <div>VOL. IV — NO. 10 · OCTOBER 2026 · TOKYO & THE OPEN WEB</div>
+      <div>STANDALONE OFFLINE SYSTEM · WAL SQLITE ENGINE · ISSUE EDITION</div>
+    </div>
+  </div>
+
+  <!-- Sticky Editorial Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-group">
+        <div class="brand-stamp kanji" title="Tanren: Disciplined Practice">鍛錬</div>
+        <div class="brand-text">
+          <span class="brand-title">TREEN · TASK</span>
+          <span class="brand-sub">STATIONERY SYSTEM</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#manifesto" class="nav-link">Manifesto</a></li>
+        <li><a href="#milestone-engine" class="nav-link">3-Task Gate</a></li>
+        <li><a href="#universes" class="nav-link">Universes</a></li>
+        <li><a href="#vault-protocol" class="nav-link">Vault Protocol</a></li>
+        <li><a href="#specs" class="nav-link">Specs</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="soundToggleBtn" class="sound-toggle-btn active" title="Toggle Tactile Stationery Audio">
+          <span>🔊</span> <span>SOUND: ON</span>
+        </button>
+        <button class="btn btn-ink trigger-download-modal">
+          <span>Download APK</span>
+        </button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <a href="#manifesto" class="mobile-nav-link">01. Manifesto</a>
+    <a href="#milestone-engine" class="mobile-nav-link">02. 3-Task Gate Engine</a>
+    <a href="#universes" class="mobile-nav-link">03. 6 Comic Universes</a>
+    <a href="#vault-protocol" class="mobile-nav-link">04. .popvault Protocol</a>
+    <a href="#specs" class="mobile-nav-link">05. Technical Specifications</a>
+  </div>
+
+  <!-- ========================================================================
+       SECTION B: HERO SECTION (THE BROADSHEET HEADLINE)
+       ======================================================================== -->
+  <header class="hero-section" id="manifesto">
+    <div class="container">
+      <div class="hero-editorial-grid">
+        <div class="hero-header-stack">
+          <div class="hero-pill-badge">
+            <div class="meta-pill">
+              <span class="pill-dot"></span> OFFLINE-FIRST UTILITY SUITE · LOCAL STORAGE ONLY
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            Quiet discipline, crafted in <em>paper and code</em>.
+          </h1>
+
+          <p class="hero-subhead">
+            Treen Task is a sovereign habit and daily milestone engine inspired by Japanese archival stationery. Zero storage permissions, zero network pings, tamper-proof <code>.popvault</code> backups, and an uncompromising daily gate across six comic universes.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-ink trigger-download-modal" style="font-size: 14.5px; padding: 13px 26px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download APK v1.4.2 (8.4 MB)</span>
+            </button>
+            <a href="#milestone-engine" class="btn btn-outline">
+              <span>Explore Interactive Gate ↓</span>
+            </a>
+            <a href="#vault-protocol" class="btn btn-outline">
+              <span>Vault Protocol Proof</span>
+            </a>
+          </div>
+
+          <!-- Broadsheet Folio Meta Ticker -->
+          <div class="hero-meta-ticker">
+            <div class="ticker-item">
+              <span class="ticker-label">PERMISSIONS</span>
+              <span class="ticker-value">0 (Zero External)</span>
+            </div>
+            <div class="ticker-item">
+              <span class="ticker-label">STORAGE ENGINE</span>
+              <span class="ticker-value">SQLite 3.45 WAL</span>
+            </div>
+            <div class="ticker-item">
+              <span class="ticker-label">ENCRYPTION</span>
+              <span class="ticker-value">AES-256 + HMAC</span>
+            </div>
+            <div class="ticker-item">
+              <span class="ticker-label">OPTIMIZATION</span>
+              <span class="ticker-value">36 Vector Stickers (-75.5%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Broadsheet Editorial Feature Plate -->
+        <div class="hero-broadsheet-plate">
+          <div class="plate-editorial">
+            <div>
+              <div class="stationery-mark">
+                <span>[DOC. REF: TRN-2026-ENG]</span>
+                <span>SECTION I: PHILOSOPHY</span>
+              </div>
+              <h2 class="plate-title">The Refusal of Cloud Noise</h2>
+              <div class="plate-quote">
+                “Modern productivity apps are covert ad-tech surveillance masquerading as todo lists. Treen restores the quiet sovereignty of ink upon textured paper.”
+              </div>
+              <ul class="plate-manifesto-list">
+                <li class="manifesto-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Zero Accounts or Login:</strong> Your device is your sanctuary. No email, no SSO, no telemetry beacons.</span>
+                </li>
+                <li class="manifesto-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Hardcore 3-Task Contract:</strong> No fractional streaks. 3 tasks certified daily or back to the starting line.</span>
+                </li>
+                <li class="manifesto-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span><strong>Category Isolation:</strong> Stick to your chosen hero or vigilante universe until full 365-day mastery.</span>
+                </li>
+              </ul>
+            </div>
+            <div style="margin-top: 24px;">
+              <span class="meta-label">MANUSCRIPT SIGN-OFF: TREEN FOUNDRY, TOKYO</span>
+            </div>
+          </div>
+
+          <div class="plate-interactive">
+            <div class="stationery-sheet">
+              <div class="sheet-header">
+                <div class="sheet-date-block">
+                  <span class="sheet-day">TODAY'S DISCIPLINE</span>
+                  <span class="sheet-date">OCTOBER 03, 2026 · DAILY DESK REGISTER</span>
+                </div>
+                <div class="sheet-seal">
+                  <span>TREEN</span>
+                  <span style="font-size: 11px;">規律</span>
+                  <span>SEAL</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                <span class="meta-label">DAILY GATE STATUS</span>
+                <span id="heroCapsuleMiniStatus" style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: #54B16C;">
+                  2/3 IN PROGRESS
+                </span>
+              </div>
+
+              <div style="background-color: var(--bg-tint-soft); border: var(--border-hairline); border-radius: var(--radius-sm); padding: 14px; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.6; margin-bottom: 16px;">
+                <div><strong>ACTIVE UNIVERSE:</strong> BATMAN &amp; DC</div>
+                <div><strong>CURRENT TIER:</strong> CADET (DAY 14/21)</div>
+                <div><strong>LOCAL WAL TXID:</strong> 0x4B9E2180</div>
+                <div><strong>ENCRYPTION KEY:</strong> HARDWARE BOUND</div>
+              </div>
+
+              <div style="margin-top: auto; border-top: 1px dashed #D4D4D8; padding-top: 14px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-muted);">
+                <span>Stationery Sheet No. 014</span>
+                <span style="color: var(--accent-green); font-weight: 600;">● Tamper-Proof Vault Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SECTION C: THE 3-TASK MILESTONE ENGINE (INTERACTIVE SHOWCASE)
+       ======================================================================== -->
+  <section class="section section-tinted" id="milestone-engine">
+    <div class="container">
+      <div class="section-header">
+        <div class="meta-pill">
+          <span class="pill-dot"></span> DAILY PROTOCOL ARCHITECTURE
+        </div>
+        <h2 class="section-title">The 3-Task Milestone Engine</h2>
+        <p class="section-desc">
+          Habit formation fails when systems allow fractional, meaningless checkmarks. Treen Task enforces a binary contract: three daily accomplishments before midnight, or your streak dissolves.
+        </p>
+      </div>
+
+      <div class="engine-layout">
+        <!-- Editorial Rules Column -->
+        <div class="engine-rules-col">
+          <div class="rule-card">
+            <div class="rule-badge">
+              <span class="rule-number">1</span>
+              <span class="meta-label">THE MANDATORY THRESHOLD</span>
+            </div>
+            <h3 class="rule-title">The 3-Task Gate</h3>
+            <p class="rule-desc">
+              Completing one or two tasks earns zero streak momentum and zero stickers. You must reach $\ge 3$ tasks completed within the calendar day to prime the verification engine. Quality over infinite trivial task lists.
+            </p>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-badge">
+              <span class="rule-number">2</span>
+              <span class="meta-label">CHRONO-SYNCHRONIZATION</span>
+            </div>
+            <h3 class="rule-title">The Midnight Rollover (11:59 PM)</h3>
+            <p class="rule-desc">
+              At 23:59:59 local device time, an automated SQLite trigger evaluates the daily register. If the gate was reached ($\ge 3$), the streak counter increments by +1. If incomplete, the streak is uncompromisingly reset to zero.
+            </p>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-badge">
+              <span class="rule-number">3</span>
+              <span class="meta-label">ARCHIVAL TRADITION</span>
+            </div>
+            <h3 class="rule-title">Next-Day Morning Reveal</h3>
+            <p class="rule-desc">
+              Your achievement is not blared with annoying push notifications. Instead, upon opening Treen the following morning, you are greeted with a quiet Japanese stationery embossed stamp and your newly unlocked universe sticker.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Simulator Card -->
+        <div class="engine-simulator-card">
+          <div class="sim-header">
+            <div class="sim-title-group">
+              <span class="meta-label">LIVE SIMULATOR</span>
+              <h3 style="font-size: 1.35rem; color: var(--ink-primary);">Daily Capsule &amp; Gate Console</h3>
+            </div>
+            <div class="streak-counter-chip">
+              <span class="streak-flame">🔥</span>
+              <span>STREAK: <strong id="currentStreakDisplay">14</strong> DAYS</span>
+            </div>
+          </div>
+
+          <!-- Capsule Visual Gauge Component -->
+          <div class="sim-capsule-display">
+            <div class="capsule-visual-wrap">
+              <div class="progress-capsule" title="Daily Progress Capsule">
+                <div class="capsule-fill" id="capsuleFill"></div>
+                <div class="capsule-ticks">
+                  <div class="capsule-tick"></div>
+                  <div class="capsule-tick"></div>
+                </div>
+              </div>
+              <span class="meta-label" style="font-size: 9.5px;">CAPSULE GAUGE</span>
+            </div>
+
+            <div class="capsule-status-info">
+              <div class="capsule-status-head">
+                <span class="capsule-count-big"><span id="capsuleCount">2</span><span class="capsule-target">/3</span></span>
+                <div class="capsule-state-badge" id="capsuleStateBadge">
+                  Gate Locked · 1 Remaining
+                </div>
+              </div>
+              <div class="capsule-feedback-text" id="capsuleFeedback">
+                Hardcore broadsheet discipline: You must finish at least 3 tasks before midnight or the streak resets to zero.
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Task Checkbox List -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="meta-label">TODAY'S INTENTIONS (CLICK TO TOGGLE)</span>
+              <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">[T] KEY SHORTCUT</span>
+            </div>
+            <div class="interactive-task-list" id="interactiveTaskList">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+
+          <!-- Add Custom Task Form -->
+          <form id="addTaskForm" class="task-add-row">
+            <input type="text" id="taskInput" class="task-input" placeholder="Enter a new intentional task..." autocomplete="off">
+            <button type="submit" class="btn btn-outline btn-sm">
+              <span>+ Add Task</span>
+            </button>
+          </form>
+
+          <!-- Action Bar: Simulate Rollover -->
+          <div class="sim-actions">
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button id="resetTasksBtn" type="button" class="btn btn-outline btn-sm" title="Reset simulator to original state">
+                <span>Reset Register</span>
+              </button>
+              <span style="font-size: 11px; color: var(--ink-muted); font-family: var(--font-mono);">[R] ROLLOVER SHORTCUT</span>
+            </div>
+            <button id="simulateRolloverBtn" type="button" class="btn btn-ink btn-sm">
+              <span>Fast-Forward to 11:59 PM (Test Rollover) ➜</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION D: THE 6 COMIC MILESTONE UNIVERSES (STICKER GRID)
+       ======================================================================== -->
+  <section class="section" id="universes">
+    <div class="container">
+      <div class="section-header">
+        <div class="meta-pill">
+          <span class="pill-dot"></span> MILESTONE ARCHITECTURE &amp; GAMIFICATION
+        </div>
+        <h2 class="section-title">The 6 Comic Milestone Universes</h2>
+        <p class="section-desc">
+          Gamification shouldn't feel like a cheap casino. Treen borrows the enduring narratives of solitary grit, moral discipline, and long-term struggle from the world's most iconic comic universes.
+        </p>
+      </div>
+
+      <!-- Universe Navigation Tabs -->
+      <div class="universe-nav-bar" id="universeNav">
+        <!-- Rendered via app.js -->
+      </div>
+
+      <!-- Category Isolation Rule Banner -->
+      <div class="isolation-banner">
+        <div class="isolation-icon">
+          <span>🔒</span>
+        </div>
+        <div class="isolation-text">
+          <h4 class="isolation-title">The Category Isolation Principle</h4>
+          <p class="isolation-desc">
+            To prevent frivolous badge-hunting, you must choose <strong>one universe</strong> and remain within it until reaching Tier VI (Legend — 365 Days). Stickers cannot be cross-pollinated across universes until 6/6 full completion is attained.
+          </p>
+        </div>
+        <div>
+          <span class="meta-pill">
+            IMMUTABLE PROTOCOL RULE
+          </span>
+        </div>
+      </div>
+
+      <!-- 6 Progression Tiers Filter Track -->
+      <div style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+        <span class="meta-label">PROGRESSION TIERS (FILTER GALLERY)</span>
+        <span class="meta-label" style="color: var(--accent-green);">CURRENT ACTIVE TIER: CADET (DAY 14)</span>
+      </div>
+      <div class="tier-progress-track">
+        <div class="tier-step-card active" data-tier="all">
+          <span class="tier-num">TIER 0</span>
+          <span class="tier-name">All Tiers</span>
+          <span class="tier-days">Complete Set</span>
+        </div>
+        <div class="tier-step-card" data-tier="Rookie">
+          <span class="tier-num">TIER I</span>
+          <span class="tier-name">Rookie</span>
+          <span class="tier-days">Days 1–7</span>
+        </div>
+        <div class="tier-step-card" data-tier="Cadet">
+          <span class="tier-num">TIER II</span>
+          <span class="tier-name">Cadet</span>
+          <span class="tier-days">Days 8–21</span>
+        </div>
+        <div class="tier-step-card" data-tier="Momentum">
+          <span class="tier-num">TIER III</span>
+          <span class="tier-name">Momentum</span>
+          <span class="tier-days">Days 22–45</span>
+        </div>
+        <div class="tier-step-card" data-tier="Habit">
+          <span class="tier-num">TIER IV</span>
+          <span class="tier-name">Habit</span>
+          <span class="tier-days">Days 46–90</span>
+        </div>
+        <div class="tier-step-card" data-tier="Iron Will">
+          <span class="tier-num">TIER V</span>
+          <span class="tier-name">Iron Will</span>
+          <span class="tier-days">Days 91–180</span>
+        </div>
+        <div class="tier-step-card" data-tier="Legend">
+          <span class="tier-num">TIER VI</span>
+          <span class="tier-name">Legend</span>
+          <span class="tier-days">Days 181–365</span>
+        </div>
+      </div>
+
+      <!-- Active Universe Lore Banner -->
+      <div style="margin-bottom: 24px; padding: 18px 24px; background-color: var(--bg-tint-soft); border: var(--border-hairline); border-radius: var(--radius-md);">
+        <h3 id="universeLoreTitle" style="font-size: 1.4rem; margin-bottom: 6px;">
+          Batman &amp; DC Vigilante — The Gotham Discipline Archive
+        </h3>
+        <p id="universeLoreDesc" style="font-size: 0.95rem; color: var(--ink-body); line-height: 1.6;">
+          Forged in the shadow of Crime Alley and perfected in the solitary quiet of the Batcave. Every rep, every entry, every vow strictly logged without compromise.
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: var(--border-hairline); flex-wrap: wrap; gap: 10px;">
+          <span id="universeCommitStatus" class="meta-label">CURRENT ACTIVE SECTOR: BATMAN &amp; DC (TIER II)</span>
+          <button id="testUniverseSwitchBtn" type="button" class="btn btn-outline btn-sm">
+            <span>Test Universe Migration (Isolation Check) ➜</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 36-Sticker Grid -->
+      <div class="sticker-grid" id="stickerGrid">
+        <!-- Rendered via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION E: THE TAMPER-PROOF VAULT (.POPVAULT PROTOCOL)
+       ======================================================================== -->
+  <section class="section section-tinted" id="vault-protocol">
+    <div class="container">
+      <div class="section-header">
+        <div class="meta-pill">
+          <span class="pill-dot"></span> CRYPTOGRAPHIC ARCHITECTURE
+        </div>
+        <h2 class="section-title">The Tamper-Proof Vault (<code>.popvault</code>)</h2>
+        <p class="section-desc">
+          Most offline apps store backups in cleartext JSON or simple ZIPs, making streak forgery trivial with any text editor. In Treen, your streak is a contract with yourself backed by authenticated cryptographic validation.
+        </p>
+      </div>
+
+      <div class="vault-layout">
+        <!-- Left: Cryptographic Flow & Explanation -->
+        <div>
+          <!-- Mathematical / Pipeline Diagram -->
+          <div class="vault-crypto-formula">
+            <span class="meta-label">AUTHENTICATED ENCRYPTION PIPELINE</span>
+            <div class="formula-flow">
+              <div class="flow-node">JSON Payload</div>
+              <div class="flow-arrow">
+                <span>AES-256 (CBC)</span>
+                <span>⟶</span>
+              </div>
+              <div class="flow-node">Ciphertext</div>
+              <div class="flow-arrow">
+                <span>HMAC-SHA256</span>
+                <span>⟶</span>
+              </div>
+              <div class="flow-node" style="border-color: var(--accent-green); color: #2E7742;">
+                .popvault Container
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="rule-card">
+              <h3 class="rule-title">Hardware-Seeded Entropy Key</h3>
+              <p class="rule-desc">
+                When Treen initializes, it computes a device-unique cryptographic seed using native hardware entropy (Android Keystore / hardware token). No plain master keys are ever written to unencrypted storage.
+              </p>
+            </div>
+
+            <div class="rule-card">
+              <h3 class="rule-title">Anti-Cheat HMAC Signature Verification</h3>
+              <p class="rule-desc">
+                When you restore a <code>.popvault</code> backup, the engine recomputes the HMAC-SHA256 signature over the payload. If even a single byte (such as changing <code>"streak_count": 14</code> to <code>999</code>) was edited in a text editor, the signature will violently fail verification and the backup is quarantined.
+              </p>
+            </div>
+
+            <div class="rule-card">
+              <h3 class="rule-title">Zero Cloud Synchronization Risk</h3>
+              <p class="rule-desc">
+                Your encrypted backups belong to you. Store them on a micro-SD card, send them via local Bluetooth, or keep them on a USB key. No third-party SaaS company can ever read, delete, or harvest your daily journals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Live WebCrypto Sandbox -->
+        <div class="crypto-sandbox-card">
+          <div class="sandbox-header">
+            <div>
+              <span class="meta-label">LIVE WEBCRYPTO SANDBOX</span>
+              <h3 style="font-size: 1.35rem; color: var(--ink-primary); margin-top: 4px;">Tamper Attack Simulator</h3>
+            </div>
+            <span class="meta-pill accent">
+              SHA-256 SUBTLE CRYPTO
+            </span>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--ink-body);">
+            Test the tamper-proof engine right now in your browser. Toggle the switch below to simulate an attacker altering their streak in a text editor, then run verification.
+          </p>
+
+          <!-- Tamper Toggle Row -->
+          <div class="sandbox-toggle-row">
+            <div>
+              <span style="font-weight: 600; color: var(--ink-primary); font-size: 13.5px; display: block;">Simulate Streak Forgery Attack</span>
+              <span style="font-size: 11px; color: var(--ink-muted);">Changes internal streak payload from 14 to 999</span>
+            </div>
+            <label class="toggle-switch-label">
+              <input type="checkbox" id="tamperToggle" style="width: 18px; height: 18px; cursor: pointer;">
+              <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 600;">TAMPER (999)</span>
+            </label>
+          </div>
+
+          <!-- Raw JSON Code Preview -->
+          <div class="code-block-preview">
+            <span class="code-block-label">PAYLOAD (INTERNAL STATE)</span>
+            <pre id="payloadCodePreview"></pre>
+          </div>
+
+          <!-- Ciphertext & Signature Stream -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); display: flex; justify-content: space-between;">
+              <span>CIPHERTEXT STREAM:</span>
+              <span id="ciphertextPreview" style="color: var(--ink-zinc); max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); display: flex; justify-content: space-between;">
+              <span>CONTAINER HMAC:</span>
+              <span id="signaturePreview" style="color: var(--ink-zinc); max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></span>
+            </div>
+          </div>
+
+          <!-- Live Verification Result Box -->
+          <div class="verify-result-box" id="verifyResultBox">
+            <div class="verify-status-title" style="color: var(--ink-muted);">
+              <span>⚙️ STATUS: IDLE</span>
+            </div>
+            <div class="verify-log">
+              Click "Run Vault Verification Engine" below to execute HMAC-SHA256 signature check over payload.
+            </div>
+          </div>
+
+          <!-- Button to trigger check -->
+          <button id="runCryptoVerifyBtn" class="btn btn-ink" style="width: 100%;">
+            <span>Run Vault Verification Engine (HMAC Check) ➜</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION F: TECHNICAL SPECS TABLE (BROADSHEET DATA DENSITY)
+       ======================================================================== -->
+  <section class="section" id="specs">
+    <div class="container">
+      <div class="section-header">
+        <div class="meta-pill">
+          <span class="pill-dot"></span> ARCHITECTURAL SPECIFICATIONS
+        </div>
+        <h2 class="section-title">Broadsheet Engineering Specification</h2>
+        <p class="section-desc">
+          How Treen Task compares against conventional cloud-tethered task managers across binary footprint, permissions, privacy, and cold-start execution.
+        </p>
+      </div>
+
+      <div class="specs-table-wrapper">
+        <table class="broadsheet-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">Metric / Subsystem</th>
+              <th style="width: 38%;">Treen Task Architecture</th>
+              <th style="width: 36%;">Industry Standard (Todoist / Notion)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="table-feature-title">Storage Architecture</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">SQLITE_WAL_V3</span>
+              </td>
+              <td>
+                <strong style="color: var(--ink-primary);">100% Local SQLite 3.45 with WAL Mode</strong><br>
+                Instant atomic disk writes, zero network roundtrips, offline by physical design.
+              </td>
+              <td>
+                Remote PostgreSQL / AWS DynamoDB cluster.<br>
+                Requires continuous internet connectivity to synchronize.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Android Permissions</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">ANDROIDMANIFEST.XML</span>
+              </td>
+              <td>
+                <span class="table-badge-green">ZERO (0 PERMISSIONS)</span><br>
+                No storage permissions, no internet access, no contacts, no location.
+              </td>
+              <td>
+                <span class="table-badge-red">12 TO 18 PERMISSIONS</span><br>
+                Requests storage, network, background sync, accounts, and audio.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Outbound Network Calls</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">TELEMETRY_AUDIT</span>
+              </td>
+              <td>
+                <span class="table-badge-green">0 PINGS / DAY</span><br>
+                Binary contains no HTTP client, no Firebase SDK, no telemetry listeners.
+              </td>
+              <td>
+                <span class="table-badge-red">400+ PINGS / DAY</span><br>
+                Analytics events sent on every click, focus change, and task creation.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Backup Security</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">CRYPTOGRAPHIC_CONTAINER</span>
+              </td>
+              <td>
+                <strong>Encrypted <code>.popvault</code> Container</strong><br>
+                AES-256-CBC cipher with HMAC-SHA256 signature. Tamper-evident anti-cheat.
+              </td>
+              <td>
+                Unencrypted CSV or JSON export.<br>
+                Trivial to forge streak numbers or task logs using Notepad.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Asset Optimization</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">36 STICKERS DOWNLINK</span>
+              </td>
+              <td>
+                <span class="table-badge-green">75.5% ASSET REDUCTION</span><br>
+                All 36 vector stickers strictly compressed to under 420 KB total binary weight.
+              </td>
+              <td>
+                Remote CDN illustrations and WebP stickers exceeding 45 MB in memory cache.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Cold Start Latency</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">AOT_COMPILATION</span>
+              </td>
+              <td>
+                <strong>48 milliseconds</strong><br>
+                Ahead-Of-Time (AOT) compiled native binary. Zero JIT or JS bridge overhead.
+              </td>
+              <td>
+                1,200ms – 2,400ms (Heavy Electron / React Native framework bootstrap).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-feature-title">Total Installed Footprint</span>
+                <span class="mono" style="font-size: 11px; color: var(--ink-muted);">APK_BINARY_WEIGHT</span>
+              </td>
+              <td>
+                <strong>&lt; 8.4 MB APK</strong> (Tree-shaken fonts &amp; native C-SQLite bindings).
+              </td>
+              <td>
+                78 MB – 140 MB download footprint.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SQLite Schema Explorer Box -->
+      <div class="sqlite-schema-box">
+        <div class="sqlite-header">
+          <div>
+            <span class="meta-label">SOURCE CODE DOCUMENTATION</span>
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--ink-primary); margin-top: 2px;">
+              Production SQLite Schema (<code>tasks.db</code>)
+            </h4>
+          </div>
+          <span class="meta-pill">DDL SPECIFICATION</span>
+        </div>
+        <div class="code-block-preview" style="max-height: 200px;">
+<pre><code>-- Immutable local schema for Treen Task
+CREATE TABLE IF NOT EXISTS tasks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  completed INTEGER DEFAULT 0,
+  tag TEXT DEFAULT 'CORE',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  certified_at TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS daily_capsules (
+  date_iso TEXT PRIMARY KEY,
+  tasks_completed_count INTEGER DEFAULT 0,
+  gate_passed INTEGER DEFAULT 0,
+  active_universe TEXT NOT NULL,
+  sticker_awarded TEXT
+);
+
+CREATE TABLE IF NOT EXISTS vault_snapshots (
+  snapshot_hash TEXT PRIMARY KEY,
+  streak_record INTEGER NOT NULL,
+  hmac_signature TEXT NOT NULL,
+  exported_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION G: THE GREEN FOOTER BAND
+       The sole saturated chromatic UI band (#54B16C)
+       ======================================================================== -->
+  <footer class="footer-green-band">
+    <div class="container">
+      <div class="footer-inner-grid">
+        <!-- Col 1: Manifesto Declaration -->
+        <div class="footer-manifesto-block">
+          <div class="footer-wordmark">TREEN ECOSYSTEM</div>
+          <p class="footer-manifesto-text">
+            Built for those who value privacy over social clout, and genuine habit density over superficial streaks. No accounts. No tracking. Just paper, code, and willpower.
+          </p>
+          <div class="footer-stamp-kanji">
+            <span>鍛錬 · TANREN</span>
+            <span>TOKYO FOUNDRY</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Documentation & Navigation -->
+        <div>
+          <h5 class="footer-col-title">Documentation</h5>
+          <ul class="footer-link-list">
+            <li><a href="#manifesto">Manifesto &amp; Philosophy ➜</a></li>
+            <li><a href="#milestone-engine">The 3-Task Gate Engine ➜</a></li>
+            <li><a href="#universes">The 6 Comic Universes ➜</a></li>
+            <li><a href="#vault-protocol">.popvault Cryptography ➜</a></li>
+            <li><a href="#specs">Engineering Benchmarks ➜</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Technical Specifications & Release -->
+        <div>
+          <h5 class="footer-col-title">Distribution &amp; Code</h5>
+          <ul class="footer-link-list">
+            <li>
+              <a href="#" class="trigger-download-modal">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download APK (v1.4.2)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub Repository</span>
+              </a>
+            </li>
+            <li><a href="#specs">SQLite Schema Reference</a></li>
+            <li><a href="#vault-protocol">HMAC-SHA256 Test Suite</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Colophon -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 TREEN ECOSYSTEM FOUNDRY. OPEN SOURCE (MIT / APACHE 2.0).
+        </div>
+        <div>
+          SHA-256 BINARY SIGNATURE: <code>7F8A92C4...9AE3</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL 1: CELEBRATORY MORNING REVEAL DIALOG
+       ======================================================================== -->
+  <div class="modal-overlay" id="morningRevealModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div id="morningRevealContent" style="display: flex; flex-direction: column; gap: 18px;">
+        <!-- Populated dynamically via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: STICKER ARCHIVE LOUPE (INSPECTOR)
+       ======================================================================== -->
+  <div class="modal-overlay" id="stickerDetailModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div id="stickerDetailContent" style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- Populated dynamically via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: DOWNLOAD APK DIALOG
+       ======================================================================== -->
+  <div class="modal-overlay" id="downloadModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="border-bottom: var(--border-hairline); padding-bottom: 14px;">
+          <span class="meta-label">DIRECT APK SIDELOAD</span>
+          <h3 style="font-size: 1.6rem; color: var(--ink-primary); margin-top: 4px;">
+            Treen Task for Android
+          </h3>
+          <p style="font-size: 0.95rem; color: var(--ink-body); margin-top: 4px;">
+            Standalone, permissionless APK. Requires Android 8.0 (Oreo) or later.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-tint-soft); border: var(--border-hairline); border-radius: var(--radius-sm); padding: 14px; font-family: var(--font-mono); font-size: 11px; display: flex; flex-direction: column; gap: 6px;">
+          <div><strong>VERSION:</strong> v1.4.2 (Production Release)</div>
+          <div><strong>ARCHITECTURE:</strong> arm64-v8a / armeabi-v7a / x86_64</div>
+          <div><strong>SIZE:</strong> 8.42 MB</div>
+          <div><strong>SHA-256:</strong> 7f8a92c4e5108b671b299e4b77f101ad4487</div>
+          <div><strong>PERMISSIONS:</strong> 0 Required (Zero Storage / Zero Net)</div>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+          <button id="primaryDownloadBtn" class="btn btn-ink" onclick="simulateApkDownload()" style="flex: 1;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download APK (8.4 MB)</span>
+          </button>
+          <button id="copyAdbBtn" class="btn btn-outline" onclick="copyAdbCommand()" style="font-size: 12px;">
+            <span>Copy ADB Command</span>
+          </button>
+        </div>
+
+        <div style="font-size: 11.5px; color: var(--ink-muted); line-height: 1.5; border-top: var(--border-hairline); padding-top: 12px;">
+          <strong>Install Instructions:</strong> Sideload directly by opening the file in your Android file manager, or run <code>adb install treen-task-v1.4.2-arm64-v8a.apk</code> via developer console.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
