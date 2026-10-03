@@ -1,6 +1,6 @@
 # Treen Ecosystem — Web Sanctuary
 
-The official web experience for the **Treen Ecosystem** — a suite of quiet, offline-first digital utilities built around Japanese stationery aesthetics, local SQLite persistence, and absolute data sovereignty. No storage permissions. No network calls.
+The official web experience for the **Treen Ecosystem** — a suite of quiet, offline-first digital utilities built around Japanese stationery aesthetics, local SQLite persistence, and absolute data sovereignty. No internet permission. No storage permissions. No tracking.
 
 ---
 

@@ -136,7 +136,7 @@
 
         <div class="grid-3">
           <div class="card">
-            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">No storage permissions. No network calls.</h3>
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">No internet permission. No storage permissions. No tracking.</h3>
             <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
               Applications operate solely within their scoped app-private sandbox. They do not request broad media or file storage access.
             </p>
@@ -145,7 +145,7 @@
           <div class="card">
             <h3 style="font-size: 1.2rem; margin-bottom: 8px;">No Telemetry Network Calls</h3>
             <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
-              Binaries are shipped without HTTP clients, tracking beacons, or ad-network dependencies. Offline means offline.
+              Apps ship without internet permission, tracking beacons or ad-network dependencies. Offline means offline.
             </p>
           </div>
 
@@ -177,7 +177,10 @@
             <li><a href="index.html">Ecosystem Manifesto</a></li>
             <li><a href="suite.html">Applications Suite</a></li>
             <li><a href="task.html">Treen Task (Module 01)</a></li>
-            <li><a href="mailto:treen.ecosystem@gmail.com">Contact</a></li>
+            <li class="footer-contact-item">
+              <a href="#contact" role="button" class="footer-contact-btn" id="contactBtn" aria-expanded="false" aria-controls="contactBox">Contact</a>
+              <div id="contactBox" class="contact-reveal-box" hidden></div>
+            </li>
           </ul>
         </div>
 
