@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treen Suite — Applications Hub</title>
+  <meta name="description" content="Explore the Treen Ecosystem utility suite. Offline-first, self-contained local instruments built for quiet focus.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="Treen Home">
+        <img src="assets/brand/treen-wordmark.png" alt="Treen" class="brand-wordmark-img">
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-item-link">Ecosystem</a></li>
+          <li><a href="suite.html" class="nav-item-link active">Suite</a></li>
+          <li><a href="task.html" class="nav-item-link">Treen Task</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-action">
+        <a href="task.html" class="btn btn-outline btn-sm">Treen Task</a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <a href="index.html" class="mobile-nav-link">Ecosystem</a>
+    <a href="suite.html" class="mobile-nav-link">Applications Suite</a>
+    <a href="task.html" class="mobile-nav-link">Treen Task</a>
+  </div>
+
+  <main>
+    <!-- Suite Header Section -->
+    <section class="hero-wrap">
+      <div class="container">
+        <div class="hero-content">
+          <span class="section-label">APPLICATIONS &amp; UTILITIES</span>
+
+          <h1 class="hero-title">
+            The Treen <em>Utility Suite</em>.
+          </h1>
+
+          <p class="hero-subhead">
+            A cohesive collection of quiet, offline-first instruments built for focused execution. Every module is engineered as an independent, sovereign tool adhering to our zero-telemetry and local persistence standards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Card Broadsheet Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2-2">
+
+          <!-- Card 1: Treen Task (Live / Active) -->
+          <article class="suite-card">
+            <div class="suite-card-top">
+              <div class="suite-card-header">
+                <span class="status-pill green">Available Now</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">MODULE 01</span>
+              </div>
+              <h2 class="suite-card-title">Treen Task</h2>
+              <p class="suite-card-summary">Offline-first task manager with simple checkpoints.</p>
+              <p class="suite-card-desc">
+                Designed around focused lists, precise completion timestamps, and a disciplined habit gate. Features 6 curated milestone collections that remain locked to your chosen focus area until completed.
+              </p>
+            </div>
+            <div class="suite-card-bottom">
+              <a href="task.html" class="btn btn-primary btn-sm">
+                <span>View Details →</span>
+              </a>
+              <a href="task.html#download" class="btn btn-outline btn-sm">
+                <span>Download APK (8.4 MB)</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Mystery Utility 02 (Locked) -->
+          <article class="suite-card locked">
+            <div class="suite-card-top">
+              <div class="suite-card-header">
+                <span class="status-pill muted">Coming Late November</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">MODULE 02</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px;">
+                <h2 class="suite-card-title">Mystery Utility 02</h2>
+                <span style="font-size: 14px;" title="Utility Locked">🔒</span>
+              </div>
+              <p class="suite-card-summary" style="color: var(--ink-muted);">A quiet offline utility currently in development.</p>
+              <p class="suite-card-desc" style="color: var(--ink-muted);">
+                Engineered to extend the Treen desktop cadence to long-form reflective logging. Adheres strictly to local SQLite persistence with zero remote telemetry.
+              </p>
+            </div>
+            <div class="suite-card-bottom">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+                STATUS: IN ENGINEERING
+              </span>
+              <span class="pill-badge" style="background: transparent;">
+                🔒 LOCKED
+              </span>
+            </div>
+          </article>
+
+          <!-- Card 3: Mystery Utility 03 (Locked / Dashed Hairline) -->
+          <article class="suite-card dashed">
+            <div class="suite-card-top">
+              <div class="suite-card-header">
+                <span class="status-pill muted">Coming Soon</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">MODULE 03</span>
+              </div>
+              <h2 class="suite-card-title" style="color: var(--ink-muted);">Mystery Utility 03</h2>
+              <p class="suite-card-summary" style="color: var(--ink-muted);">Under active development.</p>
+              <p class="suite-card-desc" style="color: var(--ink-muted);">
+                Minimalist computational tool calibrated for calm estimation and structured numerical planning. Built for zero storage permissions.
+              </p>
+            </div>
+            <div class="suite-card-bottom">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+                SPEC: EMBEDDED WAL
+              </span>
+              <span class="pill-badge" style="background: transparent;">
+                🔒 LOCKED
+              </span>
+            </div>
+          </article>
+
+          <!-- Card 4: Mystery Utility 04 (Locked / Dashed Hairline) -->
+          <article class="suite-card dashed">
+            <div class="suite-card-top">
+              <div class="suite-card-header">
+                <span class="status-pill muted">Coming Soon</span>
+                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">MODULE 04</span>
+              </div>
+              <h2 class="suite-card-title" style="color: var(--ink-muted);">Mystery Utility 04</h2>
+              <p class="suite-card-summary" style="color: var(--ink-muted);">Under active development.</p>
+              <p class="suite-card-desc" style="color: var(--ink-muted);">
+                Archival container reader and export compiler. Integrates with sovereign .popvault archives for physical cold storage backup management.
+              </p>
+            </div>
+            <div class="suite-card-bottom">
+              <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+                SPEC: AES-256 PARSER
+              </span>
+              <span class="pill-badge" style="background: transparent;">
+                🔒 LOCKED
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section class="section" style="background-color: var(--bg-tint-soft);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">SUITE STANDARDS</span>
+          <h2 class="section-title">The Sovereign Suite Guarantee</h2>
+          <p>Every tool launched under the Treen banner shares three non-negotiable engineering principles.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Zero Storage Permissions</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              Applications operate solely within their scoped app-private sandbox. They do not request broad media or file storage access.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">No Telemetry Network Calls</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              Binaries are shipped without HTTP clients, tracking beacons, or ad-network dependencies. Offline means offline.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 1.2rem; margin-bottom: 8px;">Authenticated Backups</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              State can be archived into cryptographic <code>.popvault</code> files. Encrypted and signed to guarantee data permanence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Full-Bleed Green Accent Footer Band (#54B16C) -->
+  <footer class="footer-green">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Treen Ecosystem</div>
+          <p class="footer-desc">
+            A quiet suite of sovereign local utilities. Designed on Japanese stationery principles for individuals who value privacy, archival permanence, and disciplined execution.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-label">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Ecosystem Manifesto</a></li>
+            <li><a href="suite.html">Applications Suite</a></li>
+            <li><a href="task.html">Treen Task (Module 01)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-label">Distribution</div>
+          <ul class="footer-links">
+            <li><a href="task.html#download">Download Treen Task (APK)</a></li>
+            <li><a href="suite.html">Suite Roadmap</a></li>
+            <li><a href="task.html#mechanics">Habit Continuity Spec</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 TREEN ECOSYSTEM FOUNDRY. OPEN-SOURCE UTILITY STANDARDS.
+        </div>
+        <div>
+          IMMUTABLE LOCAL ARCHIVAL SPECIFICATION
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

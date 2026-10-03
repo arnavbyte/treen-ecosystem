@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Treen Task — Quiet Daily Execution</title>
-  <meta name="description" content="A quiet daily planner built around small, consistent execution, completion timestamps, and disciplined milestone sets.">
+  <title>Treen Task — Deep Dive Product Specification</title>
+  <meta name="description" content="Treen Task is a quiet, distraction-free daily planning interface built around focused task checklists, completion timestamps, and disciplined milestone continuity.">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,8 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-item-link">Ecosystem</a></li>
+          <li><a href="suite.html" class="nav-item-link">Suite</a></li>
           <li><a href="task.html" class="nav-item-link active">Treen Task</a></li>
-          <li><a href="vault.html" class="nav-item-link">The Vault</a></li>
         </ul>
       </nav>
 
@@ -42,8 +42,8 @@
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-nav-drawer" id="mobileNavDrawer">
     <a href="index.html" class="mobile-nav-link">Ecosystem</a>
+    <a href="suite.html" class="mobile-nav-link">Applications Suite</a>
     <a href="task.html" class="mobile-nav-link">Treen Task</a>
-    <a href="vault.html" class="mobile-nav-link">The Vault</a>
   </div>
 
   <main>
@@ -51,35 +51,35 @@
     <section class="hero-wrap">
       <div class="container">
         <div class="hero-content">
-          <span class="section-label">MODULE 01 · PRODUCT SPECIFICATION</span>
+          <span class="section-label">MODULE 01 · PRODUCT DEEP DIVE</span>
 
           <h1 class="hero-title">
-            A quiet daily planner built around <em>small, consistent execution</em>.
+            Quiet, distraction-free <em>daily planning</em>.
           </h1>
 
           <p class="hero-subhead">
-            Treen Task rejects sprawling backlogs, social comparison feeds, and speculative task bloat. It provides a focused list with sub-checkpoints, exact completion timestamps, and disciplined milestone progression.
+            Treen Task is an offline-first daily execution instrument. Built without algorithmic feeds, social leaderboards, or speculative task bloat, it restores daily organization to a deliberate, analog rhythm.
           </p>
 
           <div class="hero-cta-row">
-            <a href="#preview" class="btn btn-primary">
-              <span>View Product Interface ↓</span>
+            <a href="#download" class="btn btn-primary">
+              <span>Download APK v1.4.2 (8.4 MB)</span>
             </a>
-            <a href="vault.html" class="btn btn-outline">
-              <span>Technical Architecture</span>
+            <a href="#mockup" class="btn btn-outline">
+              <span>Inspect Interface Mockup ↓</span>
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Visual Preview: Interactive Home Screen Vector / Mockup -->
-    <section class="section" id="preview">
+    <!-- Embedded UI Mockup Section -->
+    <section class="section" id="mockup">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">APPLICATION INTERFACE</span>
-          <h2 class="section-title">The Daily Register</h2>
-          <p>The core daily interface, designed with the quiet legibility of archival Japanese stationery.</p>
+          <span class="section-label">EMBEDDED APPLICATION PREVIEW</span>
+          <h2 class="section-title">The Daily Register Interface</h2>
+          <p>A quiet, flat stationery surface designed for clear legibility and zero notification anxiety.</p>
         </div>
 
         <div class="mockup-frame">
@@ -87,6 +87,7 @@
           <img src="assets/brand/treen-wordmark.png" alt="" class="mockup-watermark" aria-hidden="true">
 
           <div class="mockup-inner">
+            <!-- Header Greeting -->
             <div class="mockup-header">
               <div>
                 <span class="section-label" style="margin-bottom: 4px;">DAILY REGISTER</span>
@@ -97,7 +98,7 @@
               </div>
             </div>
 
-            <!-- Factual Status Bar -->
+            <!-- Factual Status Bar: Streak Card & Progress Capsule -->
             <div class="mockup-status-bar">
               <div>
                 <span>STREAK: </span>
@@ -113,8 +114,13 @@
               </div>
             </div>
 
-            <!-- Interactive Task List with Completion Timestamps -->
+            <!-- Interactive Task List: Today's Tasks -->
+            <div style="margin-bottom: 12px; font-family: var(--font-sans); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-muted);">
+              Active Intentions (Tap to Toggle)
+            </div>
+
             <div class="task-list" id="mockupTaskList">
+              <!-- Item 1 (Checked) -->
               <div class="task-row checked" data-id="1">
                 <div class="task-check" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -127,6 +133,7 @@
                 </div>
               </div>
 
+              <!-- Item 2 (Checked) -->
               <div class="task-row checked" data-id="2">
                 <div class="task-check" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -139,6 +146,7 @@
                 </div>
               </div>
 
+              <!-- Item 3 (Pending) -->
               <div class="task-row" data-id="3">
                 <div class="task-check" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -151,6 +159,7 @@
                 </div>
               </div>
 
+              <!-- Item 4 (Pending) -->
               <div class="task-row" data-id="4">
                 <div class="task-check" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -164,6 +173,7 @@
               </div>
             </div>
 
+            <!-- Card Bottom Colophon -->
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px dashed var(--border-color); display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: var(--ink-muted); font-family: var(--font-mono);">
               <span>LOCAL WAL COMMITS ONLY</span>
               <span id="mockupStatusNote">Completing 3+ tasks maintains momentum.</span>
@@ -173,62 +183,62 @@
       </div>
     </section>
 
-    <!-- Product Highlights (Clean, Factual, Minimal Text) -->
-    <section class="section" style="background-color: var(--bg-tint-soft);">
+    <!-- Core Mechanics Section (Factually Stated, No Hype) -->
+    <section class="section" id="mechanics" style="background-color: var(--bg-tint-soft);">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">FUNCTIONAL SPECIFICATION</span>
-          <h2 class="section-title">Product Highlights</h2>
-          <p>Every feature is calibrated to assist focus rather than create digital friction.</p>
+          <span class="section-label">SYSTEM RULES</span>
+          <h2 class="section-title">Core Mechanics</h2>
+          <p>Clean operational rules that govern daily tracking, habit continuity, and milestone progression.</p>
         </div>
 
         <div class="grid-3">
-          <!-- Highlight 1 -->
-          <div class="card">
-            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 01</span>
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Daily Planning</h3>
-            <p style="font-size: 0.92rem; line-height: 1.6;">
-              Simple, focused list with sub-checkpoints and completion timestamps. Prevents backlogs from accumulating into endless, demoralizing queues.
+          <!-- Mechanic 1: Checkpoints & Sub-tasks -->
+          <article class="card">
+            <span class="section-label" style="font-size: 10px;">MECHANIC 01</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Checkpoints &amp; Sub-tasks</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              Task breakdowns with completion timestamps. Each item records the exact moment of completion in local SQLite storage, eliminating retrospective second-guessing.
             </p>
-          </div>
+          </article>
 
-          <!-- Highlight 2 -->
-          <div class="card">
-            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 02</span>
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Streak &amp; Habit Logic</h3>
-            <p style="font-size: 0.92rem; line-height: 1.6;">
-              Completing 3 or more daily tasks maintains streak momentum and logs a milestone badge at midnight. Days with fewer than 3 completed tasks reset the counter.
+          <!-- Mechanic 2: Habit Continuity -->
+          <article class="card">
+            <span class="section-label" style="font-size: 10px;">MECHANIC 02</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Habit Continuity</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              Completing $\ge 3$ daily tasks maintains streak momentum and logs a milestone badge at the 11:59 PM rollover. Days with fewer than 3 completed tasks reset the counter.
             </p>
-          </div>
+          </article>
 
-          <!-- Highlight 3 -->
-          <div class="card">
-            <span class="section-label" style="font-size: 10px;">SUBSYSTEM 03</span>
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Themed Collections</h3>
-            <p style="font-size: 0.92rem; line-height: 1.6;">
-              Six curated milestone sets spanning distinct narrative traditions. Users remain locked to their active collection until completing all progression tiers.
+          <!-- Mechanic 3: Curated Sets -->
+          <article class="card">
+            <span class="section-label" style="font-size: 10px;">MECHANIC 03</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Curated Sets</h3>
+            <p style="font-size: 0.92rem; line-height: 1.6; color: var(--ink-body);">
+              Six themed milestone packs spanning classic narrative arcs. In accordance with Category Isolation rules, theme migration is locked until all 6 tiers are completed.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Themed Collections Grid -->
+    <!-- The 6 Themed Milestone Sets Detail -->
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">CURATED MILESTONE SETS</span>
-          <h2 class="section-title">The 6 Themed Collections</h2>
-          <p>Users select one collection at onboarding. In accordance with Category Isolation rules, theme switching remains locked until completing the full 6-tier sequence.</p>
+          <span class="section-label">THEMED COLLECTIONS</span>
+          <h2 class="section-title">The 6 Milestone Packs</h2>
+          <p>Each set contains 6 progression tiers (Rookie through Legend) representing sustained daily follow-through.</p>
         </div>
 
         <div class="collection-grid">
-          <!-- 1. Batman & DC -->
+          <!-- Pack 1 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
                 <span class="pill-badge">6 TIERS</span>
-                <span style="font-size: 11px; color: var(--accent-green); font-family: var(--font-mono); font-weight: 600;">ACTIVE</span>
+                <span style="font-size: 11px; color: var(--accent-green); font-family: var(--font-mono); font-weight: 600;">ACTIVE SECTOR</span>
               </div>
               <h4 class="collection-name">Batman &amp; DC</h4>
               <p class="collection-desc">
@@ -240,7 +250,7 @@
             </div>
           </div>
 
-          <!-- 2. Marvel & Spider-Man -->
+          <!-- Pack 2 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
@@ -257,7 +267,7 @@
             </div>
           </div>
 
-          <!-- 3. Japanese Shonen Manga -->
+          <!-- Pack 3 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
@@ -274,7 +284,7 @@
             </div>
           </div>
 
-          <!-- 4. Korean Manhwa -->
+          <!-- Pack 4 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
@@ -291,7 +301,7 @@
             </div>
           </div>
 
-          <!-- 5. Anime Classic & Cyberpunk -->
+          <!-- Pack 5 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
@@ -308,7 +318,7 @@
             </div>
           </div>
 
-          <!-- 6. Graphic Novels & Anti-Heroes -->
+          <!-- Pack 6 -->
           <div class="collection-card">
             <div>
               <div class="collection-header">
@@ -328,23 +338,26 @@
       </div>
     </section>
 
-    <!-- Download Section Anchor -->
+    <!-- Download Section (CTA: Filled Ink Button #18181B) -->
     <section class="section" id="download" style="background-color: var(--bg-tint-soft);">
       <div class="container">
         <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
           <div>
             <span class="section-label">PACKAGE DISTRIBUTION</span>
-            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Download Treen Task (APK v1.4.2)</h3>
+            <h3 style="font-size: 1.55rem; margin-bottom: 8px;">Get Treen Task for Android</h3>
             <p style="font-size: 0.95rem; color: var(--ink-body); max-width: 540px;">
-              Standalone, zero-permissions binary. Requires Android 8.0+. Direct sideload package with zero third-party telemetry.
+              Standalone, zero-permissions package. Requires Android 8.0+. Direct sideload binary with zero third-party telemetry.
             </p>
           </div>
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <a href="#" class="btn btn-primary" onclick="alert('Binary download initiated: treen-task-v1.4.2-arm64.apk (8.4 MB)'); return false;">
+          <div>
+            <!-- Filled Ink Button (#18181B) -->
+            <a href="#" class="btn btn-primary" onclick="alert('Download initiated: treen-task-v1.4.2-arm64.apk (8.4 MB)\nSHA-256: 7f8a92c4... Build certified offline.'); return false;" style="padding: 13px 26px; font-size: 14.5px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right: 2px;">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
               <span>Download APK (8.4 MB)</span>
-            </a>
-            <a href="vault.html" class="btn btn-outline">
-              <span>View SHA-256 Checksums</span>
             </a>
           </div>
         </div>
@@ -367,17 +380,17 @@
           <div class="footer-col-label">Navigation</div>
           <ul class="footer-links">
             <li><a href="index.html">Ecosystem Manifesto</a></li>
+            <li><a href="suite.html">Applications Suite</a></li>
             <li><a href="task.html">Treen Task (Module 01)</a></li>
-            <li><a href="vault.html">The Vault (Architecture)</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer-col-label">Distribution</div>
           <ul class="footer-links">
-            <li><a href="#download">Download APK (v1.4.2)</a></li>
-            <li><a href="vault.html#schema">SQLite Database DDL</a></li>
-            <li><a href="vault.html#crypto">HMAC Verification Spec</a></li>
+            <li><a href="#download">Download Treen Task (APK)</a></li>
+            <li><a href="suite.html">Suite Roadmap</a></li>
+            <li><a href="#mechanics">Habit Continuity Spec</a></li>
           </ul>
         </div>
       </div>
