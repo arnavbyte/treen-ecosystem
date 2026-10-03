@@ -218,9 +218,16 @@ code, pre, .mono {
 }
 
 .brand-wordmark-img {
-  height: 26px;
+  height: 28px;
   width: auto;
   display: block;
+  opacity: 0.94;
+  filter: drop-shadow(0 0.5px 0.5px rgba(24, 24, 27, 0.08));
+  transition: opacity 0.15s ease;
+}
+
+.brand-link:hover .brand-wordmark-img {
+  opacity: 1;
 }
 
 .nav-menu {
@@ -305,22 +312,29 @@ code, pre, .mono {
    HERO / EDITORIAL HEADER SECTIONS
    ========================================================================== */
 .hero-wrap {
-  padding: 72px 0 64px;
+  padding: 80px 0 68px;
   border-bottom: var(--border-hairline);
 }
 
 .hero-content {
-  max-width: 840px;
+  max-width: 860px;
 }
 
+/* Prominent hero brand logo, completely transparent background, zero bounding box */
 .hero-brand-lockup {
-  margin-bottom: 28px;
+  margin-bottom: 38px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .hero-brand-lockup img {
-  height: 48px;
+  height: clamp(68px, 9vw, 92px);
   width: auto;
+  max-width: 100%;
   display: block;
+  background: transparent;
+  border: none;
 }
 
 .hero-title {
@@ -356,6 +370,58 @@ code, pre, .mono {
   border-radius: var(--radius-card);
   padding: 32px;
   box-shadow: none; /* Zero heavy drop shadows */
+}
+
+/* 2-Pillar Editorial Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  background-color: var(--bg-card);
+  border: var(--border-hairline);
+  border-radius: var(--radius-card);
+  padding: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 270px;
+}
+
+.pillar-card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.pillar-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.pillar-title {
+  font-size: 1.5rem;
+  color: var(--ink-primary);
+}
+
+.pillar-body {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--ink-body);
+}
+
+.pillar-fact {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: var(--border-hairline);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
 }
 
 .grid-3 {
@@ -903,6 +969,9 @@ code, pre, .mono {
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 @media (max-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
   .grid-3 {
     grid-template-columns: 1fr;
   }
