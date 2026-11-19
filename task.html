@@ -19,6 +19,72 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Screenshots Row & Mobile Scroll-Snap Carousel */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .screenshot-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .phone-frame {
+      width: 100%;
+      background-color: var(--bg-card);
+      border: 1px solid rgba(24, 24, 27, 0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px -4px rgba(24, 24, 27, 0.07), 0 4px 12px -2px rgba(24, 24, 27, 0.04);
+      line-height: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .phone-frame:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -4px rgba(24, 24, 27, 0.1), 0 6px 16px -2px rgba(24, 24, 27, 0.05);
+    }
+    .phone-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .screenshot-caption {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: var(--ink-body);
+      margin-top: 14px;
+      text-align: center;
+      max-width: 280px;
+    }
+    @media (max-width: 768px) {
+      .screenshot-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 18px;
+        padding: 8px 28px 24px;
+        margin-left: -28px;
+        margin-right: -28px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-color) transparent;
+      }
+      .screenshot-item {
+        flex: 0 0 76%;
+        max-width: 290px;
+        scroll-snap-align: center;
+      }
+      .screenshot-caption {
+        max-width: 100%;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -79,6 +145,43 @@
             <a href="#mechanics" class="btn btn-outline">
               <span>Explore System Rules ↓</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- See It in Action (Screenshots) -->
+    <section class="section" id="screenshots">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">INTERFACE PREVIEW</span>
+          <h2 class="section-title">See It in Action</h2>
+          <p>A quiet, stationery-inspired interface built for focused daily planning.</p>
+        </div>
+
+        <div class="screenshot-grid">
+          <!-- Screenshot 1: Home -->
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img src="assets/screenshots/treen-task-home.png" alt="Daily planner home interface displaying task checklists, progress bar, and streak counter" width="796" height="1601" loading="lazy" class="phone-img">
+            </div>
+            <p class="screenshot-caption">Plan your day. Tasks, progress and streak at a glance.</p>
+          </div>
+
+          <!-- Screenshot 2: Stickers -->
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img src="assets/screenshots/treen-task-stickers.png" alt="Milestone sticker collection screen showing unlocked reward artwork badges" width="792" height="1599" loading="lazy" class="phone-img">
+            </div>
+            <p class="screenshot-caption">Collect original sticker art as your streak grows.</p>
+          </div>
+
+          <!-- Screenshot 3: New Mission -->
+          <div class="screenshot-item">
+            <div class="phone-frame">
+              <img src="assets/screenshots/treen-task-new-mission.png" alt="Task creation form showing fields for mission title, target deadline, and sub-checkpoints" width="790" height="1599" loading="lazy" class="phone-img">
+            </div>
+            <p class="screenshot-caption">Add a mission: a title, a deadline and checkpoints. That's it.</p>
           </div>
         </div>
       </div>
